@@ -22,7 +22,7 @@ public class LinkedList<E>{
 			++size;
 		}else{
 			Node <E>prev= head;
-			for(int i=0; i<size;i++){
+			while(prev.next!= null){
 				prev=prev.next;
 			}
 			Node<E> node = new Node(item);
@@ -47,7 +47,7 @@ public class LinkedList<E>{
 			++size;
 		}
 	}
-	public E get(int pos){
+	public Node<E> get(int pos){
 		if(pos<size||pos>=size){
 			return null;
 		}
@@ -55,8 +55,7 @@ public class LinkedList<E>{
 		for(int i=0; i<pos;i++){
 			curr=curr.next;
 		}
-		Node<E> node= curr.next;
-		return node;
+		return curr.next;
 	}
 	public E remove(int pos){
 		if(pos==0){
@@ -98,19 +97,15 @@ public class LinkedList<E>{
 		System.out.println();
 	}
 	public static void main(String [] args){
-		LinkedList list1= new LinkedList();
-		list1.add(1);
-		list1.add(2);
-		list1.add(3);
-		list1.add(4);
-		list1.add(5);
-		list1.linkToString();
-		list1.add(6,1);
-		list1.linkToString();
-		list1.get(2);
-		list1.remove(2);
-		list1.linkToString();
-		list1.head=list1.reverse(list1.head);
-		list1.linkToString();
+		LinkedList3 list = new LinkedList3();
+        list.add(4);
+        list.add(5,1);
+        list.add(7);
+        list.add(2,3);
+        list.remove(3);
+        list.linkToString();
+        list.head = list.reverse(list.head);
+        System.out.println();
+        list.linkToString();
 	}
 }
