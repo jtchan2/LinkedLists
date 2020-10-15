@@ -55,7 +55,8 @@ public class LinkedList<E>{
 		for(int i=0; i<pos;i++){
 			curr=curr.next;
 		}
-		return curr.next;
+		Node<E> node= curr.next;
+		return node;
 	}
 	public E remove(int pos){
 		if(pos==0){
@@ -107,7 +108,6 @@ public class LinkedList<E>{
 		list1.add(6,1);
 		list1.linkToString();
 		list1.get(2);
-		System.out.println(node.data);
 		list1.remove(2);
 		list1.linkToString();
 		list1.head=list1.reverse(list1.head);
