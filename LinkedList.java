@@ -47,7 +47,7 @@ public class LinkedList<E>{
 			++size;
 		}
 	}
-	public Node<E> get(int pos){
+	public E get(int pos){
 		if(pos<size||pos>=size){
 			return null;
 		}
@@ -55,7 +55,7 @@ public class LinkedList<E>{
 		for(int i=0; i<pos;i++){
 			curr=curr.next;
 		}
-		return curr.next;
+		return curr.data;
 	}
 	public E remove(int pos){
 		if(pos==0){
@@ -97,7 +97,7 @@ public class LinkedList<E>{
 		System.out.println();
 	}
 	public static void main(String [] args){
-		LinkedList3 list = new LinkedList3();
+		LinkedList list = new LinkedList();
         list.add(4);
         list.add(5,1);
         list.add(7);
